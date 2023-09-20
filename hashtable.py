@@ -41,6 +41,20 @@ class Hash:
                 if self.data_map[index][element][0] == key:
                     return self.data_map[index][element][1]
 
+    def keys(self):
+        """
+        Finds and returns all of the keys in the Hash map
+        :return: The hash keys
+        """
+        hash_keys = []
+
+        for element in range(len(self.hash_map)):
+            if self.hash_map[element] is not None:
+                for hashed_element in range(len(self.hash_map[element])):
+                    hash_keys.append(self.data_map[element][hashed_element][0])
+
+        return hash_keys
+
 
 
 
