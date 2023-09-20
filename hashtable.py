@@ -14,6 +14,35 @@ class Hash:
 
         return hash_time
 
+    def set_item(self, key, value):
+        """
+        Set the index of a new key/value pair.
+        :param key: The key of the key/value pair
+        :param value: The value of the key/value pair
+        :return: None
+        """
+        index = self.__hash(key)
+        if self.hash_map[index] is None:
+            self.hash_map[index] = []
+
+        self.hash_map[index].append([key, value])
+
+    def get_item(self, key):
+        """
+        Get the value of the given key
+        :param key: the key of the key/value pair to be found
+        :return: Value of the given key
+        """
+        index = self.__hash(key)
+
+        if self.hash_map[index] is not None:
+
+            for element in range(len(self.hash_map[index])):
+                if self.data_map[index][element][0] == key:
+                    return self.data_map[index][element][1]
+
+
+
 
 
 
